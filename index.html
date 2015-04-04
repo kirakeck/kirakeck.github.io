@@ -41,6 +41,7 @@
 		  <button data-filter=".screenprint">screenprint</button>
 		  <button data-filter=":not(.fiber)">non-fiber</button>
 		</div>
+		
 		<div class="clear"></div>
 
 	</div>
@@ -148,7 +149,7 @@
 
 	<script>
 
-		$( function() {
+		$(function() {
   // init Isotope
   var $container = $('#container').isotope({
     itemSelector: '.item',
@@ -157,14 +158,11 @@
 				columnWidth: 340
 			}
   });
-  // filter functions
-  var filterFns = {
-  };
   // bind filter button click
   $('#filters').on( 'click', 'button', function() {
     var filterValue = $( this ).attr('data-filter');
     // use filterFn if matches value
-    filterValue = filterFns[ filterValue ] || filterValue;
+    filterValue = filterValue;
     $container.isotope({ filter: filterValue });
   });
   // change is-checked class on buttons
