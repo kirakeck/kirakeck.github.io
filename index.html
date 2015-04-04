@@ -24,6 +24,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
 
 </head>
 
@@ -158,10 +159,10 @@
 				columnWidth: 340
 			}
   });
-  
+
   $container.imagesLoaded( function() {
-  $container.isotope('layout');
-});
+  	$container.isotope('layout');
+  });
   // bind filter button click
   $('#filters').on( 'click', 'button', function() {
     var filterValue = $( this ).attr('data-filter');
