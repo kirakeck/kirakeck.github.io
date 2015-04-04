@@ -1,0 +1,183 @@
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Kira Keck</title>
+
+	<link rel="icon" 
+      type="image/png" 
+      href="images/favicon.png">
+
+	<!-- FONTS -->
+
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+
+	<!-- LOAD CSS -->
+	<link rel="stylesheet" type="text/css" href="css/animations.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<!-- SCRIPTS -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+	<script src="js/isotope.pkgd.min.js"></script>
+
+</head>
+
+<body>
+
+
+	<div id="top">
+
+		<div class="divider"></div>
+	
+		<div id="filters" class="button-group">
+		  <button data-filter="*">show all</button>
+		  <button data-filter=".clothing">clothing</button>
+		  <button data-filter=".object">object</button>
+		  <button data-filter=".screenprint">screenprint</button>
+		  <button data-filter=":not(.fiber)">non-fiber</button>
+		</div>
+		<div class="clear"></div>
+
+	</div>
+
+	<div id="container">
+
+	  <div class="item fiber clothing screenprint">
+	  	<a href="google.com">
+	  		<img src="images/test1.jpg">
+	  		<span>Modular Fashion</span>
+	  		<div class="svgwrapper">
+		  		<svg height="200" width="200">
+		  			<rect class="shape" height="200" width="200"/>
+		  		</svg>
+	  		</div>
+	  	</a>
+	  </div>
+
+	   <div class="item fiber object screenprint">
+	   	<a href="google.com">
+	   		<img src="images/test2.jpg">
+	   		<span>2 kool for skool</span>
+	  		<div class="svgwrapper">
+		  		<svg height="200" width="200">
+		  			<rect class="shape" height="200" width="200"/>
+		  		</svg>
+	  		</div>
+	   	</a>
+	   </div>
+
+	   <div class="item object">
+	   	<a href="google.com">
+	   		<img src="images/test3.jpg">
+	   		<span>How do we even talk about this?</span>
+	  		<div class="svgwrapper">
+		  		<svg height="200" width="200">
+		  			<rect class="shape" height="200" width="200"/>
+		  		</svg>
+	  		</div>
+	   	</a>
+	   </div>
+
+	   <div class="item object">
+	   	<a href="google.com">
+	   		<img src="images/test4.jpg">
+	   		<span>Funky Fresh, So Very Funky Fresh</span>
+	  		<div class="svgwrapper">
+		  		<svg height="200" width="200">
+		  			<rect class="shape" height="200" width="200"/>
+		  		</svg>
+	  		</div>
+	   	</a>
+	   </div>
+
+	   <div class="item fiber clothing">
+	   	<a href="google.com">
+	   		<img src="images/test5.png">
+	   		<span>008</span>
+	  		<div class="svgwrapper">
+		  		<svg height="200" width="200">
+		  			<rect class="shape" height="200" width="200"/>
+		  		</svg>
+	  		</div>
+	   	</a>
+	   </div>
+
+	   <div class="item object screenprint">
+	   	<a href="google.com">
+	   		<img src="images/test6.png">
+	   		<span>Check me out</span>
+	  		<div class="svgwrapper">
+		  		<svg height="200" width="200">
+		  			<rect class="shape" height="200" width="200"/>
+		  		</svg>
+	  		</div>
+	   	</a>
+	   </div>
+
+	   <div class="item fiber object">
+	   	<a href="google.com">
+	   		<img src="images/test7.jpg">
+	   		<span>Check YOU out</span>
+	  		<div class="svgwrapper">
+		  		<svg height="200" width="200">
+		  			<rect class="shape" height="200" width="200"/>
+		  		</svg>
+	  		</div>
+	   	</a>
+	   </div>
+
+	   <div class="item fiber object">
+	   	<a href="google.com">
+	   		<img src="images/test8.jpg">
+	   		<span>I HAVE WRECKED IT</span>
+	  		<div class="svgwrapper">
+		  		<svg height="200" width="200">
+		  			<rect class="shape" height="200" width="200"/>
+		  		</svg>
+	  		</div>
+	   	</a>
+	   </div>
+
+	</div>
+
+
+	<script>
+
+		$( function() {
+  // init Isotope
+  var $container = $('#container').isotope({
+    itemSelector: '.item',
+    layoutMode: 'masonry',
+    masonry: {
+				columnWidth: 340
+			}
+  });
+  // filter functions
+  var filterFns = {
+  };
+  // bind filter button click
+  $('#filters').on( 'click', 'button', function() {
+    var filterValue = $( this ).attr('data-filter');
+    // use filterFn if matches value
+    filterValue = filterFns[ filterValue ] || filterValue;
+    $container.isotope({ filter: filterValue });
+  });
+  // change is-checked class on buttons
+  $('.button-group').each( function( i, buttonGroup ) {
+    var $buttonGroup = $( buttonGroup );
+    $buttonGroup.on( 'click', 'button', function() {
+      $buttonGroup.find('.is-checked').removeClass('is-checked');
+      $( this ).addClass('is-checked');
+    });
+  });
+  
+});
+
+	</script>
+
+</body>

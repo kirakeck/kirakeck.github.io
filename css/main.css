@@ -1,0 +1,160 @@
+/*RESET*/
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.clear {
+	clear: both;
+}
+
+/*NAVBAR*/
+
+#top {
+	margin: 0 auto;
+}
+
+.divider {
+	height: 130px;
+	width: 100%;
+}
+
+/*BUTTON STYLING*/
+
+#filters {
+	padding: 0 0 20px 0;
+	float: right;
+}
+
+#top button {
+	background-color: #000;
+	color: #fff;
+	border: none;
+	padding: 4px 6px;
+}
+
+#top button:focus {
+    outline: none;
+}
+
+#top button:hover:not(:first-child), #top button:focus:not(:first-child) {
+	color: #FFFF66;
+}
+
+/*SVG BORDER*/
+
+#container a .svgwrapper {
+	width: 200px;
+	left: 50%;
+	margin-left: -100px;
+	position: absolute;
+	top: 50%;
+ 	-webkit-transform: translateY(-50%);
+  	-ms-transform: translateY(-50%);
+  	transform: translateY(-50%);
+	z-index: 2;
+	opacity: 0;
+}
+
+#container a:hover > .svgwrapper {
+	opacity: 1;
+	z-index: 1;
+}
+
+#container a .shape {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 400;
+  stroke-width: 10px;
+  fill: transparent;
+  stroke: #fff;
+  transition: stroke-dashoffset 1s, stroke-dasharray 1s;
+  -webkit-transition: stroke-dashoffset 1s, stroke-dasharray 1s;
+ }
+
+#container a:hover .shape {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 0;
+}
+
+/*COLOR HOVERS*/
+
+.clothing {
+	background-color: #FF3333;
+}
+
+.object {
+	background-color: #3300CC;
+}
+
+/*ISOTOPE*/
+
+#container {
+	background-color: #fff;
+	padding: 0;
+	margin: 0 auto;
+}
+
+#container a {
+	height: auto;
+	display: block;
+	max-width: 340px;
+	z-index: 1;
+}
+
+#container a:hover > img {
+	mix-blend-mode: multiply;
+	-webkit-mix-blend-mode: multiply;
+}
+
+#container a span {
+	width: 160px;
+	position: absolute;
+	top: 50%;
+ 	-webkit-transform: translateY(-50%);
+  	-ms-transform: translateY(-50%);
+  	transform: translateY(-50%);
+	left: 50%;
+	margin: 0 0 0 -80px;
+	z-index: 10;
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 400;
+	display: none;
+}
+
+#container a:hover > span {
+	display: block;
+}
+
+.item {
+	display: block;
+	max-width: 340px;
+}
+
+.item img {
+	max-width: 340px;
+	height: auto;
+}
+
+/*MEDIA QUERIES*/
+
+@media(min-width: 900px) {
+	#container, #top {
+		width: 1020px;
+	}
+}
+
+@media(min-width: 450px) and (max-width: 900px) {
+	#container, #top{
+		width: 680px;
+	}
+}
+
+@media(max-width: 450px) {
+	#container, #top{
+		width: 340px;
+	}
+}
