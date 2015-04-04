@@ -151,15 +151,17 @@
 
 		$(window).load(function() {
   // init Isotope
-  var $container = $('#container').imagesLoaded(function(){
-  	isotope({
-	    itemSelector: '.item',
-	    layoutMode: 'masonry',
-	    masonry: {
-					columnWidth: 340
-				}
-	});
+  var $container = $('#container').isotope({
+    itemSelector: '.item',
+    layoutMode: 'masonry',
+    masonry: {
+				columnWidth: 340
+			}
   });
+  
+  $container.imagesLoaded( function() {
+  $container.isotope('layout');
+});
   // bind filter button click
   $('#filters').on( 'click', 'button', function() {
     var filterValue = $( this ).attr('data-filter');
