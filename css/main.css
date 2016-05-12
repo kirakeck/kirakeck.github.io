@@ -6,8 +6,56 @@
 	font-family: 'Roboto Condensed', sans-serif;
 }
 
+body {
+	overflow: hidden;
+}
+
 .clear {
 	clear: both;
+}
+
+/*COMING_SOON*/ 
+
+#comingsoon {
+	z-index: 10000;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #ff9076;
+	color: #fff;
+}
+
+#comingsoon h1, #comingsoon h4 {
+	font-weight: normal;
+	text-align: center;
+}
+
+#comingsoon h1 {
+	width: 460px;
+	font-size: 48px;
+	position: relative;
+	left: 50%;
+	margin-left: -230px;
+	top: 200px;
+}
+
+#comingsoon h4 {
+	width: 540px;
+	position: relative;
+	top: 225px;
+	left: 50%;
+	margin-left: -270px;
+}
+
+#comingsoon a {
+	color: #ed4e34;
+	text-decoration: none;
+}
+
+#comingsoon a:hover {
+	border-bottom: 2px solid #ed4e34;
 }
 
 /*NAVBAR*/
